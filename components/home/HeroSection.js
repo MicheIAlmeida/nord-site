@@ -114,6 +114,7 @@ export default function HeroSection() {
             Criamos o novo
         </motion.div>
         
+      <h1 className="text-7xl md:text-9xl lg:text-[10rem] text-white tracking-tight" style={{ lineHeight: '0.85' }}>
         {/* Segunda linha - ExtraBold 800 */}
         <motion.div
             initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
