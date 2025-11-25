@@ -119,7 +119,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
-            className="font-['Funnel_Display'] font-extrabold"
+            className="mb-4 font-funnel"
         >
             Elevamos o extraordinário!
         </motion.div>
