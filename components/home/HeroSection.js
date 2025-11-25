@@ -38,8 +38,8 @@ export default function HeroSection() {
         })
     };
 
-    const words1 = "Toda grande campanha".split(" ");
-    const words2 = "começa com a NORD".split(" ");
+    const words1 = "Criamos o novo".split(" ");
+    const words2 = "Elevamos o extraordinário!".split(" ");
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
