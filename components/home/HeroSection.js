@@ -103,7 +103,7 @@ export default function HeroSection() {
             >
                 {/* Title with word-by-word blur animation */}
                <div className="mb-6">
-    <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-tight">
+    <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight">
         {/* Primeira linha - SemiBold 600 */}
         <motion.div
             initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
