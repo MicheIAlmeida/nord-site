@@ -44,6 +44,9 @@ export default function HeroSection() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
             {/* Animated gradient background */}
+
+  <div className="h-20"></div>
+
             <motion.div 
                 className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black"
                 style={{
