@@ -77,27 +77,29 @@ export default function HeroSection() {
                 style={{ opacity }}
             >
                 {/* NOVO TÍTULO */}
-<h1 className="text-4xl md:text-7xl lg:text-9xl text-white tracking-tight font-['Funnel Display'] font-medium" style={{ lineHeight: '0.85' }}>
-    {/* Primeira linha */}
-    <motion.div
-        initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-        className="font-medium"
-    >
-        Criamos o novo
-    </motion.div>
-    
-    {/* Segunda linha */}
-    <motion.div
-        initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 1, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
-        className="font-extrabold text-2xl md:text-4xl lg:text-6xl"  {/* Menor no mobile */}
-    >
-        Elevamos o extraordinário
-    </motion.div>
-</h1>
+<div className="mb-6">
+    <h1 className="text-6xl md:text-8xl lg:text-[9rem] text-white tracking-tight font-['Funnel Display'] font-medium" style={{ lineHeight: '0.85' }}>
+        {/* Primeira linha - Tamanho normal */}
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+            className="font-medium"
+        >
+         Criamos o novo
+        </motion.div>
+        
+        {/* Segunda linha - Fonte MENOR */}
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            className="font-extrabold text-9xl md:text-9xl lg:text-8xl"
+        >
+        Elevamos o extraordinário!
+        </motion.div>
+    </h1>
+</div>
 
                 <motion.p
                     initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
