@@ -111,7 +111,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="mb-4 font-funnel"
         >
-            Criamos marcas que não seguem tendências.
+            Criamos o novo
         </motion.div>
         
         {/* Segunda linha - ExtraBold 800 */}
@@ -121,7 +121,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
             className="font-['Funnel_Display'] font-extrabold"
         >
-            Elas fazem!
+            Elevamos o extraordinário!
         </motion.div>
     </h1>
 </div>
