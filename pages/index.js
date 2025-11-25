@@ -13,12 +13,14 @@ export default function Home() {
         <div className="min-h-screen bg-black">
             <Header />
             <HeroSection />
+            <ClientsSection />
             <ShowcaseGrid />
             <ServicesSection />
-            <ClientsSection />
             <CTASection />
-            <FlashlightText text="ON Y VA?" />
+            <FlashlightText text="" />
             <Footer />
         </div>
     );
 }
+
+   <ClientsSection />

@@ -19,17 +19,35 @@ export default function Footer() {
                             <span> - Creative Content Studio.</span><br />
                             Transformando ideias em campanhas que geram resultados reais.
                         </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                                <Instagram className="w-5 h-5 text-white" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                                <Linkedin className="w-5 h-5 text-white" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                                <Mail className="w-5 h-5 text-white" />
-                            </a>
-                        </div>
+                       <div className="flex gap-4">
+    {/* Instagram */}
+    <a 
+        href="https://www.instagram.com/nord.pp" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+    >
+        <Instagram className="w-5 h-5 text-white" />
+    </a>
+    
+    {/* LinkedIn */}
+    <a 
+        href="https://www.linkedin.com/company/nordpp" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+    >
+        <Linkedin className="w-5 h-5 text-white" />
+    </a>
+    
+    {/* Email */}
+    <a 
+        href="mailto:contato@nordpp.com" 
+        className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+    >
+        <Mail className="w-5 h-5 text-white" />
+    </a>
+</div>
                     </div>
 
                     {/* Services */}
@@ -40,7 +58,6 @@ export default function Footer() {
                             <li><a href="#" className="hover:text-white transition-colors">Design</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Estratégia</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Conteúdo</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Fotografia</a></li>
                         </ul>
                     </div>
 
@@ -60,7 +77,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm">
-                        © 2024 <span className="font-bold brand-name">NORD</span><span className="brand-suffix">|PP</span>. Todos os direitos reservados.
+                        © 2025 <span className="font-bold brand-name">NORD</span><span className="brand-suffix">|PP</span>. Todos os direitos reservados.
                     </p>
                     <div className="flex gap-6 text-gray-500 text-sm">
                         <a href="#" className="hover:text-white transition-colors">Privacidade</a>

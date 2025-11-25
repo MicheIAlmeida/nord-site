@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from "../../components/ui/button";
+import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -58,93 +58,134 @@ export default function Header() {
                      style={{ transform: 'translateX(-50%)' }} />
             </div>
             
-            <div className="max-w-7xl mx-auto px-6 py-4">
-                <div className="flex items-center justify-between relative">
-                    {/* Linha horizontal abaixo do header com efeito flare */}
-                    <div 
-                        className="absolute -bottom-4 left-0 right-0 h-px overflow-visible group cursor-pointer"
-                        onMouseMove={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const percentage = (x / rect.width) * 100;
-                            const flare = e.currentTarget.querySelector('.line-flare');
-                            if (flare) {
-                                flare.style.left = `${percentage}%`;
-                            }
-                        }}
-                    >
+            {/* DIV COM ESPAÇO ACIMA - MUDE O pt-4 PARA MAIS OU MENOS ESPAÇO */}
+            <div className="pt-2">
+                <div className="max-w-7xl mx-auto px-6 py-4">
+                    <div className="flex items-center justify-between relative">
+                        {/* Linha horizontal abaixo do header com efeito flare */}
                         <div 
-                            className="absolute inset-0 bg-white/20"
-                        />
-                        <div 
-                            className="line-flare absolute top-1/2 -translate-y-1/2 h-[40px] w-[200px] opacity-0 group-hover:opacity-100 transition-all duration-75 pointer-events-none"
-                            style={{ 
-                                transform: 'translateX(-50%) translateY(-50%)',
-                                background: 'radial-gradient(ellipse 200px 40px at center, rgba(255,255,255,0.8) 0%, rgba(59,130,246,0.4) 30%, transparent 70%)',
-                                filter: 'blur(8px)'
+                            className="absolute -bottom-4 left-0 right-0 h-px overflow-visible group cursor-pointer"
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const percentage = (x / rect.width) * 100;
+                                const flare = e.currentTarget.querySelector('.line-flare');
+                                if (flare) {
+                                    flare.style.left = `${percentage}%`;
+                                }
                             }}
-                        />
-                    </div>
-                    {/* Logo */}
-                    <div className="flex items-center gap-3">
-                        <img 
-                            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6920c463f0b41b8fd16f8072/d3b16d801_Noir_Prancheta1cpia.png"
-                            alt="NORD"
-                            className="h-8 w-auto"
-                        />
-                    </div>
-
-                    {/* Desktop Menu */}
-                    <nav className="hidden md:flex items-center gap-8">
-                        {menuItems.map((item, i) => (
-                            <motion.button
-                                key={item}
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * i, duration: 0.5 }}
-                                whileHover={{ 
-                                    y: -2,
-                                    textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
-                                }}
-                                className="text-gray-300 hover:text-white transition-all text-sm font-medium relative"
-                            >
-                                {item}
-                            </motion.button>
-                        ))}
-                    </nav>
-
-                    {/* CTA Button */}
-                    <motion.div 
-                        className="hidden md:block"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.5, duration: 0.5 }}
-                    >
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
                         >
-                            <Button 
-                                className="bg-white text-black hover:bg-gray-200 rounded-lg relative overflow-hidden group"
-                            >
-                                <span className="relative z-10">Começar projeto</span>
-                                <motion.div
-                                    className="absolute inset-0 bg-gray-100"
-                                    initial={{ x: "-100%" }}
-                                    whileHover={{ x: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                />
-                            </Button>
-                        </motion.div>
-                    </motion.div>
+                            <div 
+                                className="absolute inset-0 bg-white/20"
+                            />
+                            <div 
+                                className="line-flare absolute top-1/2 -translate-y-1/2 h-[40px] w-[200px] opacity-0 group-hover:opacity-100 transition-all duration-75 pointer-events-none"
+                                style={{ 
+                                    transform: 'translateX(-50%) translateY(-50%)',
+                                    background: 'radial-gradient(ellipse 200px 40px at center, rgba(255,255,255,0.8) 0%, rgba(59,130,246,0.4) 30%, transparent 70%)',
+                                    filter: 'blur(8px)'
+                                }}
+                            />
+                        </div>
+                        {/* Logo */}
+                        <div className="flex items-center gap-3">
+                            <img 
+                                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6920c463f0b41b8fd16f8072/d3b16d801_Noir_Prancheta1cpia.png"
+                                alt="NORD"
+                                className="h-8 w-auto"
+                            />
+                        </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden text-white"
-                    >
-                        {isMobileMenuOpen ? <X /> : <Menu />}
-                    </button>
+                        {/* Desktop Menu */}
+                        <nav className="hidden md:flex items-center gap-8">
+    <motion.a
+        href="https://nordpp.com"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
+        whileHover={{ 
+            y: -2,
+            textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
+        }}
+        className="text-gray-300 hover:text-white transition-all text-sm font-medium relative"
+    >
+        Serviços
+    </motion.a>
+    <motion.a
+        href="https://nordpp.com"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        whileHover={{ 
+            y: -2,
+            textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
+        }}
+        className="text-gray-300 hover:text-white transition-all text-sm font-medium relative"
+    >
+        Portfólio
+    </motion.a>
+    <motion.a
+        href="https://nordpp.com"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        whileHover={{ 
+            y: -2,
+            textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
+        }}
+        className="text-gray-300 hover:text-white transition-all text-sm font-medium relative"
+    >
+        Sobre
+    </motion.a>
+    <motion.a
+        href="https://nordpp.com"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        whileHover={{ 
+            y: -2,
+            textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
+        }}
+        className="text-gray-300 hover:text-white transition-all text-sm font-medium relative"
+    >
+        Contato
+    </motion.a>
+</nav>
+
+                        {/* CTA Button */}
+                        <motion.div 
+                            className="hidden md:block"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.5, duration: 0.5 }}
+                        >
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button 
+                                    className="bg-white text-black hover:bg-gray-200 rounded-lg relative overflow-hidden group"
+                                     onClick={() => window.open('https://www.instagram.com/nord.pp', '_blank')}
+                                >
+                                    <span className="relative z-10">Começar projeto</span>
+                                    <motion.div
+                                        className="absolute inset-0 bg-gray-100"
+                                        initial={{ x: "-100%" }}
+                                        whileHover={{ x: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    />
+                                </Button>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="md:hidden text-white"
+                        >
+                            {isMobileMenuOpen ? <X /> : <Menu />}
+                        </button>
+                    </div>
                 </div>
             </div>
 

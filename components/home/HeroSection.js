@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from "../../components/ui/button";
+import { Button } from "../ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function HeroSection() {
     const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 150]);
-    const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+    const y = useTransform(scrollY, [0, 800], [0, 150]);
+    const opacity = useTransform(scrollY, [0, 600], [1, 0]);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
@@ -38,15 +38,12 @@ export default function HeroSection() {
         })
     };
 
-    const words1 = "Criamos o novo".split(" ");
-    const words2 = "Elevamos o extraordinário!".split(" ");
-
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+            {/* DIV DO ESPAÇO */}
+            <div className="h-20"></div>
+
             {/* Animated gradient background */}
-
-  <div className="h-20"></div>
-
             <motion.div 
                 className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black"
                 style={{
@@ -55,7 +52,7 @@ export default function HeroSection() {
                 }}
             />
 
-            {/* Subtle gradient overlays - Blue and Orange */}
+            {/* Background effects... (mantenha todos os efeitos de fundo do seu código original) */}
             <div className="absolute inset-0 gradient-bg-1" />
             <div className="absolute inset-0 gradient-bg-2" />
             <div className="absolute inset-0">
@@ -64,7 +61,7 @@ export default function HeroSection() {
                 <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-orange-500/8 rounded-full blur-[120px]" />
             </div>
             
-            {/* Grid pattern with parallax and zoom */}
+            {/* Grid pattern */}
             <motion.div 
                 className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"
                 style={{ y }}
@@ -73,59 +70,33 @@ export default function HeroSection() {
                 transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }}
             />
             
-            {/* Multiple glow effects */}
-            <motion.div 
-                className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px]"
-                animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.5, 0.3]
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-            />
-            <motion.div 
-                className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]"
-                animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                }}
-            />
+            {/* Glow effects... (mantenha os efeitos de glow) */}
 
             <motion.div 
-                className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center"
+                className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center mt-40"
                 style={{ opacity }}
             >
-                {/* Title with word-by-word blur animation */}
-               <div className="mb-6">
-   <h1 className="text-7xl md:text-9xl lg:text-[10rem] text-white tracking-tight font-['Funnel_Display']"style={{ lineHeight: '0.85' }}{{ fontWeight: 800 }}></h1>
-        {/* Primeira linha - SemiBold 600 */}
+                {/* NOVO TÍTULO */}
+<div className="mb-6">
+    <h1 className="text-6xl md:text-8xl lg:text-[9rem] text-white tracking-tight font-['Funnel Display'] font-medium" style={{ lineHeight: '0.85' }}>
+        {/* Primeira linha - Tamanho normal */}
         <motion.div
             initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-            className="mb-4 font-funnel"
+            className="font-medium"
         >
-            Criamos o novo
+         Criamos o novo
         </motion.div>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight font-['Funnel_Display']" style={{ lineHeight: '0.85' }}{{ fontWeight: 400 }}>
-        {/* Segunda linha - ExtraBold 800 */}
+        {/* Segunda linha - Fonte MENOR */}
         <motion.div
             initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
-            className="mb-4 font-funnel"
+            className="font-extrabold text-9xl md:text-9xl lg:text-8xl"
         >
-            Elevamos o extraordinário!
+        Elevamos o extraordinário!
         </motion.div>
     </h1>
 </div>
@@ -139,6 +110,7 @@ export default function HeroSection() {
                     Criamos conteúdo criativo e estratégias impactantes. Sem complicação, só resultados.
                 </motion.p>
 
+                {/* Botões (mantenha os botões do seu código original) */}
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
                     animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -152,6 +124,7 @@ export default function HeroSection() {
                         <Button 
                             size="lg" 
                             className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-6 rounded-xl group relative overflow-hidden"
+                             onClick={() => window.open('https://www.instagram.com/nord.pp', '_blank')}
                         >
                             <span className="relative z-10 flex items-center">
                                 Começar projeto
@@ -173,6 +146,7 @@ export default function HeroSection() {
                             size="lg" 
                             variant="outline" 
                             className="border-white/20 bg-white/5 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
+                               onClick={() => window.open('https://nordpp.com', '_blank')}
                         >
                             <Play className="mr-2 w-5 h-5" />
                             Ver portfólio
@@ -180,7 +154,7 @@ export default function HeroSection() {
                     </motion.div>
                 </motion.div>
 
-                {/* Rotating logo */}
+                {/* Logo rotating (mantenha a logo) */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}

@@ -51,7 +51,7 @@ const regularItems = [
 
 const showcaseItems = [...featuredItems, ...regularItems];
 
-const categories = ["Todos", "Design", "Conteúdo", "Marketing", "Visual", "Social", "Planejamento", "Produção", "B2B"];
+const categories = ["Todos", "Design", "Conteúdo", "Planejamento", "Produção"];
 
 export default function ShowcaseGrid() {
     const [activeCategory, setActiveCategory] = useState("Todos");

@@ -56,6 +56,7 @@ export default function CTASection() {
                         <Button 
                             size="lg" 
                             className="bg-white text-black hover:bg-gray-200 text-lg px-10 py-7 rounded-xl group relative overflow-hidden"
+                             onClick={() => window.open('https://www.instagram.com/nord.pp', '_blank')}
                         >
                             <span className="relative z-10 flex items-center">
                                 Iniciar projeto
